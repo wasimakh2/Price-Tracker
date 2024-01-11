@@ -20,12 +20,7 @@ class AmazoncrawlerSpiderMiddleware(object):
         crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
         return s
 
-    def process_spider_input(self, response, spider):
-        # Called for each response that goes through the spider
-        # middleware and into the spider.
 
-        # Should return None or raise an exception.
-        return None
 
     def process_spider_output(self, response, result, spider):
         # Called with the results returned from the Spider, after
@@ -43,14 +38,7 @@ class AmazoncrawlerSpiderMiddleware(object):
         # or Item objects.
         pass
 
-    def process_start_requests(self, start_requests, spider):
-        # Called with the start requests of the spider, and works
-        # similarly to the process_spider_output() method, except
-        # that it doesn’t have a response associated.
 
-        # Must return only requests (not items).
-        for r in start_requests:
-            yield r
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
